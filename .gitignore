@@ -1,4 +1,12 @@
 venv
 __pycache__
 test
+.idea
+virt
 .DS_Store
+test*.py
+*.db
+*.egg-info
+dist
+build
+test*.py
