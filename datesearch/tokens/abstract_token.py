@@ -7,6 +7,7 @@ class AbstractToken:
     def __init__(self, piece_of_string):
         self.source = piece_of_string
         self.content = self.source_parse()
+        self.active = True
 
     def __repr__(self):
         name = self.__class__.__name__
