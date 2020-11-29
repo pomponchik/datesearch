@@ -10,7 +10,6 @@ class Other(AbstractToken):
         return self.source
 
     def equal_content(self, letters):
-        print(letters, self.content)
         if not letters:
             return True
         return self.content == ''.join(letters)

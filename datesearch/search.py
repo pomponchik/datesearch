@@ -45,7 +45,6 @@ class Search:
         expression = self.parse_expression(expression)
         return self.prove(tokens, expression)
 
-
     def parse_expression(self, expression):
         flag = False
         args = []
@@ -82,7 +81,7 @@ class Search:
     def prove(self, tokens, expression):
         current_item = 0
         result = []
-        for token in tokens:
+        for index, token in enumerate(tokens):
             item = expression[current_item]
             if item == token:
                 current_item += 1
@@ -92,6 +91,12 @@ class Search:
             else:
                 current_item = 0
                 result = []
+                item = expression[current_item]
+                if item == token:
+                    current_item += 1
+                    result.append(token)
+                    if current_item == len(expression):
+                        return result
         return None
 
 
